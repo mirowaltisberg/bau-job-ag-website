@@ -345,33 +345,37 @@
     <form class="contact__form" novalidate>
       <p class="contact__form-intro">Oder schreiben Sie uns. Wir melden uns am gleichen Werktag.</p>
 
-      <div class="field field--inline">
-        <label for="role">Ich bin</label>
-        <div class="field__radios">
-          <label class="radio">
-            <input type="radio" name="role" id="role" value="firma" checked />
+      <div class="segment-control" role="radiogroup" aria-labelledby="segment-control-label">
+        <span class="segment-control__label" id="segment-control-label">Ich bin</span>
+        <div class="segment-control__track">
+          <span class="segment-control__indicator" aria-hidden="true"></span>
+          <label class="segment-control__option">
+            <input type="radio" name="role" id="role-firma" value="firma" checked />
             <span>Unternehmen</span>
           </label>
-          <label class="radio">
-            <input type="radio" name="role" value="fachkraft" />
+          <label class="segment-control__option">
+            <input type="radio" name="role" id="role-fachkraft" value="fachkraft" />
             <span>Fachkraft</span>
           </label>
         </div>
       </div>
 
       <div class="field">
+        <input type="text" name="name" id="name" autocomplete="name" placeholder=" " required />
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" autocomplete="name" placeholder="Vor- und Nachname" />
+        <span class="field__underline" aria-hidden="true"></span>
       </div>
 
       <div class="field">
+        <input type="email" name="email" id="email" autocomplete="email" placeholder=" " required />
         <label for="email">E-Mail</label>
-        <input type="email" name="email" id="email" autocomplete="email" placeholder="ihr.name@beispiel.ch" />
+        <span class="field__underline" aria-hidden="true"></span>
       </div>
 
-      <div class="field">
+      <div class="field field--textarea">
+        <textarea name="message" id="message" rows="4" placeholder=" "></textarea>
         <label for="message">Worum geht es?</label>
-        <textarea name="message" id="message" rows="4" placeholder="Kurz beschrieben — wir rufen zurück."></textarea>
+        <span class="field__underline" aria-hidden="true"></span>
       </div>
 
       <button type="submit" class="btn btn--accent btn--block">
@@ -415,6 +419,10 @@
 
   <p class="site-footer__base">
     © 2026 Bau Job AG · Personalvermittlung im Baugewerbe · CH-Zürich
+  </p>
+
+  <p class="site-footer__credit">
+    Made by <a href="https://mirowaltisberg.ch" target="_blank" rel="noopener">Miró</a>.
   </p>
 </footer>
 

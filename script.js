@@ -17,7 +17,7 @@
   onScroll();
 
   /* ─── Scroll-triggered reveal ────────────────────────────────────── */
-  const revealEls = document.querySelectorAll('[data-reveal]');
+  const revealEls = document.querySelectorAll('[data-reveal], .contact');
   if (!prefersReduced && 'IntersectionObserver' in window) {
     const revealIO = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -86,18 +86,40 @@
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       if (!btn) return;
-      const original = btn.querySelector('span').textContent;
-      btn.querySelector('span').textContent = 'Wird gesendet …';
-      btn.disabled = true;
+      const label = btn.querySelector('span');
+      const original = label.textContent;
+
+      // Validate required fields — shake form on miss
+      const invalid = !form.checkValidity();
+      if (invalid) {
+        form.classList.remove('is-invalid');
+        // restart animation
+        void form.offsetWidth;
+        form.classList.add('is-invalid');
+        const firstBad = form.querySelector(':invalid');
+        if (firstBad) firstBad.focus({ preventScroll: false });
+        return;
+      }
+
+      // Loading state
+      btn.dataset.state = 'loading';
+      label.textContent = 'Wird gesendet …';
+
       setTimeout(() => {
-        btn.querySelector('span').textContent = 'Danke — wir melden uns.';
+        // Success state
+        btn.dataset.state = 'success';
+        label.textContent = 'Danke — wir melden uns.';
+
         setTimeout(() => {
-          btn.querySelector('span').textContent = original;
-          btn.disabled = false;
+          delete btn.dataset.state;
+          label.textContent = original;
           form.reset();
-        }, 2400);
-      }, 800);
+        }, 2600);
+      }, 900);
     });
+
+    // clear shake state after animation completes so it can replay
+    form.addEventListener('animationend', () => form.classList.remove('is-invalid'));
   }
 
   /* ─── Subtle parallax on hero logo ───────────────────────────────── */
