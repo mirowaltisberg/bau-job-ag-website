@@ -1,0 +1,13 @@
+# Local dev
+.DS_Store
+*.log
+
+# Screenshots used during development
+_screenshots/
+
+# Vercel
+.vercel
+
+# Editor
+.vscode/
+.idea/
