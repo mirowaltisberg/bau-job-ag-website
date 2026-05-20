@@ -1053,9 +1053,10 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .segment-control {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;        /* center label + pill in the form column */
   gap: 10px;
   margin: 0 0 var(--s-3);
+  text-align: center;
 }
 .segment-control__label {
   font-family: var(--f-mono);
@@ -1066,8 +1067,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 }
 .segment-control__track {
   position: relative;
-  display: flex;
-  width: 100%;
+  display: inline-flex;       /* content-sized so it can be centered */
   padding: 4px;
   background: color-mix(in oklch, var(--c-ink-2) 70%, transparent);
   border: 1px solid var(--c-line-dark);
@@ -1387,7 +1387,7 @@ textarea:focus-visible {
 
   /* Form — bigger touch targets */
   .segment-control { gap: var(--s-3); }
-  .segment-control__track { width: 100%; }
+  .segment-control__track { display: flex; width: 100%; }
   .segment-control__option { flex: 1; min-width: 0; padding: 11px 16px; }
 
   .field { padding-top: 18px; }
