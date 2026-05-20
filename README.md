@@ -2,7 +2,8 @@
 
 Statische One-Pager-Website für **Bau Job AG**, Schweizer Personalvermittlung im Baugewerbe (Temporär & Festanstellung).
 
-🌐 **Live:** _wird nach Vercel-Deployment hier verlinkt_
+🌐 **Live:** [bau-job-ag-website.vercel.app](https://bau-job-ag-website.vercel.app)
+📦 **Repo:** [github.com/mirowaltisberg/bau-job-ag-website](https://github.com/mirowaltisberg/bau-job-ag-website)
 
 ---
 
