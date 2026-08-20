@@ -1,6 +1,6 @@
-# Bau Job AG — Website
+# Baujob — Website
 
-Statische One-Pager-Website für **Bau Job AG**, Schweizer Personalvermittlung im Baugewerbe (Temporär & Festanstellung).
+Statische One-Pager-Website für **Baujob**, Schweizer Personalvermittlung im Baugewerbe (Temporär & Festanstellung).
 
 🌐 **Live:** [bau-job-ag-website.vercel.app](https://bau-job-ag-website.vercel.app)
 📦 **Repo:** [github.com/mirowaltisberg/bau-job-ag-website](https://github.com/mirowaltisberg/bau-job-ag-website)
@@ -46,7 +46,7 @@ Eine impeccable gestaltete Single-Page-Website mit dem Charakter einer Schweizer
 --c-accent: oklch(0.82 0.175 82)    /* Job-Gold ≈ #FDB515 */
 ```
 
-Logo-Schutzraum, Schriftpaarung und Farbgewichtung folgen dem [Bau Job AG Brand Manual](./bau_job_ag_brand_package%202/02_Brand_Guidelines/Bau_Job_AG_Brand_Guide.pdf).
+Logo-Schutzraum, Schriftpaarung und Farbgewichtung folgen dem [Baujob Brand Manual](./bau_job_ag_brand_package%202/02_Brand_Guidelines/Bau_Job_AG_Brand_Guide.pdf).
 
 ---
 
@@ -96,4 +96,4 @@ vercel deploy --prod
 
 ## Lizenz
 
-Markenrechte, Logo und Brand-Package liegen bei **Bau Job AG**. Quellcode der Website: privat / firmeneigen.
+Markenrechte, Logo und Brand-Package liegen bei **Baujob**. Quellcode der Website: privat / firmeneigen.
