@@ -9,7 +9,7 @@ Statische One-Pager-Website für **Baujob**, Schweizer Personalvermittlung im Ba
 
 ## Übersicht
 
-Eine impeccable gestaltete Single-Page-Website mit dem Charakter einer Schweizer Baustelle: präzise, klar, kompromisslos. Schwarz, Weiss und das Bau-Job-Gelb (#FDB515) — eingesetzt wie Bauwarnband: selten, aber laut.
+Eine impeccable gestaltete Single-Page-Website mit dem Charakter einer Schweizer Baustelle: präzise, klar, kompromisslos. Schwarz, Weiss und das Baujob-Gelb (#FDB515) — eingesetzt wie Bauwarnband: selten, aber laut.
 
 ### Inhaltsbereiche
 
