@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════════
-   Baujob — One-pager
+   Bau Job — One-pager
    Brutalist Swiss · Construction-precision · Black + Hi-vis Yellow
    ════════════════════════════════════════════════════════════════════ */
 
@@ -116,6 +116,8 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   font-size: 1.1rem;
 }
 .site-header__logo .logo-mark { width: 30px; height: auto; }
+.site-header__wordmark,
+.site-footer__wordmark { white-space: nowrap; }
 
 .site-header__nav {
   display: flex;
@@ -741,7 +743,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   max-width: var(--container);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   border-top: 1px solid var(--c-line-dark);
   border-bottom: 1px solid var(--c-line-dark);
@@ -1419,6 +1421,7 @@ textarea:focus-visible {
   .stat:nth-child(odd)  { border-right: 1px solid var(--c-line-dark); }
   .stat:nth-child(even) { border-right: 0; }
   .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--c-line-dark); }
+  .stat:last-child { border-right: 0; }
   .process { grid-template-columns: repeat(2, 1fr); }
   .section-head { grid-template-columns: 1fr; gap: var(--s-4); }
   .split { grid-template-columns: 1fr; }
@@ -1546,6 +1549,7 @@ textarea:focus-visible {
     border-right: 1px solid var(--c-line-dark);
   }
   .stat:nth-child(even)  { border-right: 0; }
+  .stat:last-child       { border-right: 0; }
   .stat:nth-child(1),
   .stat:nth-child(2)     { border-bottom: 1px solid var(--c-line-dark); }
   .stat__num { font-size: clamp(2.4rem, 12vw, 3.4rem); }
