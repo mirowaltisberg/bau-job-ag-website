@@ -1147,7 +1147,8 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   line-height: 1.5;
   color: var(--c-mute);
 }
-.leadership__people { border-top: 1px solid var(--c-line); }
+.leadership__people { display: flex; flex-direction: column; border-top: 1px solid var(--c-line); }
+.leadership__person--arbios { order: -1; }
 .leadership__person { padding: clamp(28px, 3vw, 44px) 0; border-bottom: 1px solid var(--c-line); }
 .leadership__role {
   font-family: var(--f-mono);
@@ -1184,6 +1185,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   .leadership__portrait { max-width: 420px; }
   .leadership__portrait img { max-height: 360px; }
   .leadership__person { padding: var(--s-6) 0; }
+  .leadership__person--arbios { order: 0; }
   .leadership__name { font-size: clamp(1.8rem, 7vw, 2.4rem); }
 }
 
