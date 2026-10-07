@@ -1121,95 +1121,71 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   box-shadow: 0 0 0 2px color-mix(in oklch, var(--c-accent) 60%, transparent);
 }
 
-/* ─── Team ───────────────────────────────────────────────────────────── */
-.team {
+/* ─── Geschäftsführung ──────────────────────────────────────────────── */
+.leadership {
   max-width: var(--container);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--c-line);
-  border-bottom: 1px solid var(--c-line);
-}
-.team-card {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
-  gap: var(--s-6);
-  padding: var(--s-7) var(--s-6);
-  border-right: 1px solid var(--c-line);
-  background: var(--c-paper);
-  transition: background var(--d-med) var(--ease-out);
-}
-.team-card:last-child { border-right: 0; }
-.team-card:hover { background: var(--c-paper-2); }
-
-.team-card__media {
-  margin: 0;
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: var(--c-paper-2);
-}
-.team-card__media img {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.04);
-  transition: transform var(--d-slow) var(--ease-out);
-}
-.team-card:hover .team-card__media img { transform: scale(1.03); }
-
-.team-card__body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.team-card__num {
-  font-family: var(--f-mono);
-  font-size: var(--t-mono);
-  color: var(--c-mute);
-  margin-bottom: auto;
-  display: flex;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 6vw, 88px);
   align-items: center;
-  gap: var(--s-3);
 }
-.team-card__num::before {
-  content: "";
-  width: 18px;
-  height: 1px;
-  background: var(--c-accent);
-  transition: width 480ms var(--ease-out);
+.leadership__portrait { margin: 0; position: relative; }
+.leadership__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  aspect-ratio: 646 / 680;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(1) contrast(1.04);
 }
-.team-card:hover .team-card__num::before { width: 42px; }
-.team-card__name {
-  font-family: var(--f-display);
-  font-weight: 700;
-  font-size: clamp(1.6rem, 1.4vw + 1rem, 2.2rem);
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  margin: var(--s-6) 0 var(--s-3);
-}
-.team-card__role {
-  font-family: var(--f-mono);
-  font-size: var(--t-eyebrow);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+.leadership__portrait figcaption {
+  margin-top: var(--s-3);
+  font-size: 0.85rem;
   line-height: 1.5;
   color: var(--c-mute);
+}
+.leadership__people { border-top: 1px solid var(--c-line); }
+.leadership__person { padding: clamp(28px, 3vw, 44px) 0; border-bottom: 1px solid var(--c-line); }
+.leadership__role {
+  font-family: var(--f-mono);
+  font-size: var(--t-eyebrow);
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-mute);
+  margin: 0 0 var(--s-3);
+}
+.leadership__name {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 2.6vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   margin: 0;
-  padding-top: var(--s-3);
-  border-top: 1px solid var(--c-line);
+  overflow-wrap: anywhere;
 }
-.team-card__rule {
-  position: absolute;
-  left: 0; right: 0; bottom: -1px;
-  height: 3px;
-  background: var(--c-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--d-slow) var(--ease-out);
+.leadership__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+  min-height: 44px;
+  margin-top: var(--s-4);
+  font-size: 0.95rem;
+  text-underline-offset: 5px;
 }
-.team-card:hover .team-card__rule { transform: scaleX(1); }
+.leadership__contact span { color: var(--c-ink); background: var(--c-accent); padding: 4px 9px; }
+.leadership__contact:hover { text-decoration: underline; }
+.leadership__contact:focus-visible { outline: 2px solid var(--c-ink); outline-offset: 4px; }
+@media (max-width: 700px) {
+  .leadership { grid-template-columns: 1fr; gap: var(--s-6); }
+  .leadership__portrait { max-width: 420px; }
+  .leadership__portrait img { max-height: 360px; }
+  .leadership__person { padding: var(--s-6) 0; }
+  .leadership__name { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+}
 
 /* ─── Legal pages (Impressum) ────────────────────────────────────────── */
 .legal {
@@ -1426,9 +1402,6 @@ textarea:focus-visible {
   .section-head { grid-template-columns: 1fr; gap: var(--s-4); }
   .split { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
-  .team { grid-template-columns: 1fr; }
-  .team-card { border-right: 0; border-bottom: 1px solid var(--c-line); }
-  .team-card:last-child { border-bottom: 0; }
 }
 
 /* Mobile */
@@ -1562,15 +1535,6 @@ textarea:focus-visible {
   .process__step p { font-size: 0.92rem; }
   .process__num { font-size: 0.72rem; margin-bottom: var(--s-3); }
 
-  /* Team — compact side-by-side cards */
-  .team-card {
-    grid-template-columns: minmax(110px, 150px) minmax(0, 1fr);
-    gap: var(--s-5);
-    padding: var(--s-6) var(--s-5);
-  }
-  .team-card__name { font-size: 1.45rem; margin-top: var(--s-4); }
-  .team-card__role { font-size: 0.68rem; letter-spacing: 0.12em; }
-
   /* Legal pages */
   .legal__block { grid-template-columns: 1fr; gap: var(--s-3); padding: var(--s-5) 0; }
   .legal__facts > div { grid-template-columns: 1fr; gap: 2px; }
@@ -1671,10 +1635,3 @@ textarea:focus-visible {
     transition: none;
   }
 }
-
-/* Geschäftsführung ohne Porträt: kompakter Textblock ohne leeren Bildplatz. */
-.team-card.team-card--text {
-  grid-template-columns: minmax(0, 1fr);
-  align-content: center;
-}
-.team-card--text .team-card__body { justify-content: center; }
