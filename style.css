@@ -1671,3 +1671,10 @@ textarea:focus-visible {
     transition: none;
   }
 }
+
+/* Geschäftsführung ohne Porträt: kompakter Textblock ohne leeren Bildplatz. */
+.team-card.team-card--text {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+}
+.team-card--text .team-card__body { justify-content: center; }
